@@ -1,0 +1,121 @@
+@use "./reset/reset";
+@use "variables" as v;
+@use "mixins" as m;
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: v.$veryDarkBlue;
+  color: v.$white;
+  display: grid;
+  place-items: center;
+  font-family: v.$font-family;
+  font-size: v.$font-size;
+}
+main {
+  width: min(calc(100% - 4rem), m.pxToRem(420px));
+  background-color: v.$darkBlue;
+  border-radius: 1.3rem;
+}
+.wrapper {
+  margin: 1rem;
+  .box {
+    @include m.d-flex(column, center, flex-start);
+
+    > *:not(:last-child) {
+      margin-bottom: 1.81rem;
+    }
+
+    &.rating-submitted {
+      align-items: center;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+.rating {
+  .star_img {
+    background-color: v.$darkBlue2;
+    width: m.pxToRem(50px);
+    height: m.pxToRem(50px);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    img {
+      transform: scale(1.4);
+    }
+  }
+  &-question {
+    font-size: m.pxToRem(25px);
+  }
+
+  &-desp {
+    font-size: m.pxToRem(13px);
+    color: v.$mediumGrey;
+  }
+  &-numbers {
+    width: 100%;
+
+    @include m.d-flex(row, space-between, center);
+  }
+
+  &-btn {
+    background-color: v.$darkBlue2;
+    width: m.pxToRem(50px);
+    height: m.pxToRem(50px);
+    color: inherit;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: v.$orange;
+      color: v.$white;
+    }
+  }
+
+  &-btn.clicked {
+    background-color: v.$mediumGrey;
+    color: v.$white;
+  }
+
+  &-submit {
+    width: 100%;
+    background-color: v.$orange;
+    text-transform: uppercase;
+    color: inherit;
+    border: none;
+    outline: none;
+    border-radius: 1.4rem;
+    padding: 1rem;
+
+    font-size: m.pxToRem(14px);
+
+    &:hover {
+      background-color: v.$white;
+      color: v.$orange;
+      cursor: pointer;
+    }
+  }
+}
+
+.rating-submitted {
+  &-card {
+    background-color: v.$darkBlue2;
+    color: v.$orange;
+    font-size: m.pxToRem(14px);
+    padding: 0.5rem 1rem;
+    border-radius: 1.2rem;
+  }
+
+  &-response {
+    font-weight: 700;
+    font-size: m.pxToRem(21px);
+  }
+}

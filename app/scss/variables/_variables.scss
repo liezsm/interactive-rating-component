@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+// fonts
+
+$font-family: "Overpass", sans-serif;
+
+// Colors
+
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$lightGrey: hsl(217, 12%, 63%);
+$mediumGrey: hsl(216, 12%, 54%);
+$darkBlue: hsl(213, 19%, 18%);
+$darkBlue2: rgb(30, 37, 44);
+$veryDarkBlue: hsl(216, 12%, 8%);
+
+$font-size: 15px;
+
+// screen sizes
+
+$mobile: 375px;
+$desktop: 1440px;

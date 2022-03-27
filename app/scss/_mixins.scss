@@ -1,0 +1,30 @@
+@use "variables" as v;
+@use "sass:math";
+
+// for tablets and up
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+//  bigger laptops
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+    @content;
+  }
+}
+
+// convert px to rem
+
+@function pxToRem($pxValue) {
+  @return math.div($pxValue, 16px) * 1rem;
+}
+
+// display flex
+
+@mixin d-flex($fd, $jc, $ai) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
